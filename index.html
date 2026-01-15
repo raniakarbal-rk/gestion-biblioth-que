@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BiblioManager</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+
+    <div id="login-container">
+        <div class="login-card">
+            <h2>BIBLIO</h2>
+            <form id="login-form">
+                <input type="text" id="user" placeholder="Admin" required>
+                <input type="password" id="pass" placeholder="Mot de passe" required>
+                <button type="submit">Connexion</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="app-container" style="display: none;">
+        <nav class="navbar">
+            <div class="logo">📚 LIB-SYS <span>PRO</span></div>
+            <div class="nav-tools">
+                <select id="lang-select">
+                    <option value="fr">Français</option>
+                    <option value="en">English</option>
+                    <option value="ar">العربية</option>
+                </select>
+                <button id="logout-btn" class="btn-danger">Déconnexion</button>
+            </div>
+        </nav>
+
+        <div class="main-layout">
+            <aside class="sidebar">
+                <ul id="menu">
+                    <li data-target="dashboard" class="active">Tableau de bord</li>
+                    <li data-target="livres">Gestion Livres</li>
+                    <li data-target="adherents">Adhérents</li>
+                    <li data-target="emprunts">Emprunts</li>
+                </ul>
+            </aside>
+            <main class="content" id="main-content"></main>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

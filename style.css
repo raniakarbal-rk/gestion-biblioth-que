@@ -1,0 +1,245 @@
+/* Import d'une police moderne */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+    /* Nouvelle Palette de Couleurs Professionnelle */
+    --primary: #4361ee;         /* Bleu moderne */
+    --primary-light: #eef2ff;
+    --dark-bg: #1e1e2d;        /* Sidebar sombre élégante */
+    --sidebar-hover: #2b2b40;
+    --success: #10b981;        /* Vert émeraude */
+    --danger: #ef4444;         /* Rouge corail */
+    --bg-body: #f8f9fa;        /* Fond de page très clair */
+    --white: #ffffff;
+    --text-main: #2b3674;      /* Bleu nuit pour le texte */
+    --text-muted: #a3aed0;     /* Gris pour les textes secondaires */
+    --border: #edf2f7;
+    --radius: 12px;
+    --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+}
+
+* { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+}
+
+body { 
+    font-family: 'Inter', sans-serif; 
+    background: var(--bg-body); 
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+/* --- PAGE DE CONNEXION --- */
+#login-container { 
+    height: 100vh; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    background: linear-gradient(135deg, var(--dark-bg) 0%, #0a0a0f 100%); 
+}
+
+.login-card { 
+    background: var(--white); 
+    padding: 3rem; 
+    border-radius: 20px; 
+    width: 100%;
+    max-width: 400px; 
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.login-card h2 {
+    font-size: 1.75rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+    letter-spacing: -0.025em;
+}
+
+/* --- BARRE DE NAVIGATION --- */
+.navbar { 
+    background: var(--white); 
+    height: 70px; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 0 2rem; 
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo { 
+    font-weight: 700; 
+    font-size: 1.25rem; 
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logo span { color: var(--primary); }
+
+/* --- MENU LATÉRAL (SIDEBAR) --- */
+.main-layout { display: flex; min-height: calc(100vh - 70px); }
+
+.sidebar { 
+    width: 260px; 
+    background: var(--dark-bg); 
+    color: #a2a3b7;
+    padding: 1.5rem 0;
+}
+
+.sidebar li { 
+    padding: 12px 24px; 
+    margin: 4px 16px;
+    cursor: pointer; 
+    list-style: none; 
+    border-radius: var(--radius);
+    transition: all 0.2s ease;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar li:hover { 
+    background: var(--sidebar-hover);
+    color: var(--white);
+}
+
+.sidebar li.active { 
+    background: var(--primary); 
+    color: var(--white);
+    box-shadow: 0 4px 12px rgba(67, 97, 238, 0.3);
+}
+
+/* --- CONTENU & CARTES --- */
+.content { flex: 1; padding: 2.5rem; overflow-y: auto; }
+
+.card { 
+    background: var(--white); 
+    padding: 2rem; 
+    border-radius: var(--radius); 
+    box-shadow: var(--shadow); 
+    margin-bottom: 2rem;
+    border: 1px solid var(--border);
+}
+
+/* --- TABLEAUX MODERNES --- */
+table { 
+    width: 100%; 
+    border-collapse: collapse; 
+    margin-top: 1rem; 
+}
+
+th { 
+    background: #fcfcfd;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    padding: 1rem;
+    border-bottom: 1px solid var(--border);
+}
+
+td { 
+    padding: 1.25rem 1rem; 
+    border-bottom: 1px solid var(--border);
+    font-size: 0.95rem;
+}
+
+tr:last-child td { border-bottom: none; }
+
+/* --- BOUTONS --- */
+.btn-action, button[type="submit"] { 
+    padding: 10px 18px; 
+    border: none; 
+    border-radius: 8px; 
+    cursor: pointer; 
+    font-weight: 600;
+    font-size: 0.85rem;
+    transition: all 0.2s;
+}
+
+.btn-details { 
+    background: var(--primary-light); 
+    color: var(--primary); 
+    margin-right: 8px;
+}
+
+.btn-details:hover { 
+    background: var(--primary); 
+    color: var(--white); 
+}
+
+.btn-delete { 
+    background: #fee2e2; 
+    color: var(--danger); 
+}
+
+.btn-delete:hover { 
+    background: var(--danger); 
+    color: var(--white); 
+}
+
+/* --- FORMULAIRES --- */
+input, select { 
+    width: 100%;
+    padding: 12px 16px; 
+    margin: 8px 0; 
+    border: 1px solid var(--border); 
+    border-radius: 8px; 
+    background: #f9fafb;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+input:focus { border-color: var(--primary); background: var(--white); }
+
+/* --- MODAL (POPUP) --- */
+.modal { 
+    background: rgba(13, 18, 45, 0.7); 
+    backdrop-filter: blur(5px); /* Effet de flou en arrière-plan */
+    position: fixed; 
+    top: 0; left: 0; 
+    width: 100%; height: 100%; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    z-index: 1000; 
+}
+/* Conteneur de la recherche */
+.search-wrapper {
+    position: relative;
+    width: 350px;
+    margin-bottom: 20px;
+}
+
+/* Champ de recherche avec espace pour l'icône */
+.search-wrapper input {
+    padding-left: 40px !important; /* Laisse de la place pour la loupe */
+    width: 100%;
+}
+
+/* L'icône loupe (faite en pur CSS pour ne pas charger d'images externes) */
+.search-wrapper::before {
+    content: '🔍';
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+    color: var(--text-muted);
+}
+
+/* Message quand aucun résultat n'est trouvé */
+.no-results {
+    text-align: center;
+    padding: 30px;
+    color: var(--text-muted);
+    font-style: italic;
+    background: #fdfdfd;
+    border-radius: var(--radius);
+}
